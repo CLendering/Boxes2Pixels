@@ -6,6 +6,10 @@
 
 **Learning defect segmentation from noisy SAM masks**
 
+[Paper](https://arxiv.org/abs/2604.11162) · [Dataset](https://huggingface.co/datasets/MoxVox/boxes2pixels-wind-turbine)
+
+Accepted to **AI4RWC @ CVPR 2026**.
+
 Boxes2Pixels is a weakly supervised segmentation framework for wind turbine blade inspection. It learns pixel-level defect masks from bounding-box supervision by distilling SAM-generated pseudo-masks into a compact DINOv2-based student model.
 
 The main model, `dino_final`, combines frozen DINOv2 ViT-S/14 features, BitFit adaptation, a lightweight detail branch, a binary defect head, and one-sided online self-correction to improve robustness under noisy pseudo-labels.
