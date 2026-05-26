@@ -6,7 +6,15 @@
 
 **Learning defect segmentation from noisy SAM masks**
 
-[Paper](https://arxiv.org/abs/2604.11162) · [Dataset](https://huggingface.co/datasets/MoxVox/boxes2pixels-wind-turbine)
+<p align="center">
+  <a href="https://arxiv.org/abs/2604.11162">
+    <img src="https://img.shields.io/badge/arXiv-2604.11162-b31b1b.svg">
+  </a>
+  <a href="https://drive.google.com/file/d/1xxMCupm-VB2calqLJeQh_FDsncjhxepb/view?usp=sharing">
+    <img src="https://img.shields.io/badge/Dataset-Google%20Drive-blue">
+  </a>
+  <img src="https://img.shields.io/badge/AI4RWC-CVPR%202026-green">
+</p>
 
 Accepted to **AI4RWC @ CVPR 2026**.
 
@@ -62,15 +70,11 @@ The DINOv2 backbone is loaded through `torch.hub`, so the first run may require 
 
 ## Dataset
 
-The dataset is available on Hugging Face:
+The dataset is currently provided as a Google Drive zip:
 
-```bash
-huggingface-cli download MoxVox/boxes2pixels-wind-turbine \
-  --repo-type dataset \
-  --local-dir dataset_dtu_final_split
-```
+[Download dataset](https://drive.google.com/file/d/1xxMCupm-VB2calqLJeQh_FDsncjhxepb/view?usp=sharing)
 
-Expected structure:
+After downloading, unzip it so that the dataset root contains:
 
 ```text
 dataset_dtu_final_split/
