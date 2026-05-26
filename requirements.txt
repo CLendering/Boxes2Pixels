@@ -1,0 +1,7 @@
+numpy
+opencv-python
+Pillow
+tqdm
+matplotlib
+transformers
+huggingface_hub
