@@ -11,42 +11,61 @@
 <body>
   <main class="page">
     <header class="hero">
-      <div class="tag">AI4RWC @ CVPR 2026</div>
-
       <h1>Boxes2Pixels</h1>
       <p class="subtitle">Learning Defect Segmentation from Noisy SAM Masks</p>
 
+      <p class="venue">CVPR 2026 (AI4RWC)</p>
+
       <p class="authors">
-        <a href="https://www.tue.nl/en/research/researchers/camile-lendering" target="_blank" rel="noopener">Camile Lendering</a>,
-        <a href="https://research.tue.nl/en/persons/erkut-akdag/" target="_blank" rel="noopener">Erkut Akdag</a>,
-        <a href="https://www.tue.nl/en/research/researchers/egor-bondarau" target="_blank" rel="noopener">Egor Bondarev</a>
+        <a class="author-link" href="https://www.tue.nl/en/research/researchers/camile-lendering" target="_blank" rel="noopener">Camile Lendering</a><span class="comma">,</span>
+        <a class="author-link" href="https://research.tue.nl/en/persons/erkut-akdag/" target="_blank" rel="noopener">Erkut Akdag</a><span class="comma">,</span>
+        <a class="author-link" href="https://www.tue.nl/en/research/researchers/egor-bondarau" target="_blank" rel="noopener">Egor Bondarev</a>
       </p>
 
       <p class="affiliation">
         AIMS Group, Department of Electrical Engineering, Eindhoven University of Technology
       </p>
 
-      <nav class="links" aria-label="Project links">
-        <a class="button primary" href="https://arxiv.org/abs/2604.11162" target="_blank" rel="noopener">Paper</a>
-        <a class="button" href="https://github.com/CLendering/Boxes2Pixels" target="_blank" rel="noopener">Code</a>
-        <a class="button" href="https://drive.google.com/file/d/1xxMCupm-VB2calqLJeQh_FDsncjhxepb/view?usp=sharing" target="_blank" rel="noopener">Dataset</a>
+      <nav class="linkrow" aria-label="Project links">
+        <a class="pill pill-dark" href="https://arxiv.org/abs/2604.11162" target="_blank" rel="noopener">
+          <span class="pill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" role="img" focusable="false" aria-label="Paper">
+              <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5" />
+              <path d="M8 12h8M8 16h8M8 20h6" />
+            </svg>
+          </span>
+          <span class="pill-text">arXiv</span>
+        </a>
+
+        <a class="pill pill-dark" href="https://github.com/CLendering/Boxes2Pixels" target="_blank" rel="noopener">
+          <span class="pill-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="18" height="18" role="img" focusable="false" aria-label="GitHub">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path>
+            </svg>
+          </span>
+          <span class="pill-text">Code</span>
+        </a>
+
+        <a class="pill pill-dark" href="https://huggingface.co/papers/2604.11162" target="_blank" rel="noopener">
+          <span class="pill-icon" aria-hidden="true">
+            <span class="hf-emoji">🤗</span>
+          </span>
+          <span class="pill-text">HF Paper</span>
+        </a>
       </nav>
     </header>
-
-    <section class="teaser-section">
-      <img class="teaser" src="assets/teaser.png" alt="Boxes2Pixels qualitative overview">
-      <p class="caption">
-        From coarse bounding boxes to dense defect masks. SAM pseudo-masks provide weak supervision, but the final student is trained to correct systematic teacher errors.
-      </p>
-    </section>
 
     <section class="abstract">
       <h2>Abstract</h2>
       <p>
-        Accurate defect segmentation is critical for industrial inspection, yet dense pixel-level annotations are rarely available.
-        Boxes2Pixels addresses this gap by converting inexpensive bounding boxes into SAM pseudo-masks and training a compact student model that treats SAM as a noisy teacher rather than ground truth.
+        Boxes2Pixels is a weakly supervised segmentation framework that addresses the gap in dense pixel-level annotations by converting inexpensive bounding boxes into SAM pseudo-masks and training a compact student model that treats SAM as a noisy teacher rather than ground truth.
         The student combines a hierarchical decoder over frozen DINOv2 features, an auxiliary binary localization head, and one-sided online self-correction to recover sparse defects missed by pseudo-labels.
         On a manually annotated wind turbine inspection benchmark, Boxes2Pixels improves anomaly mIoU by <strong>+6.97</strong> and binary IoU by <strong>+9.71</strong> over the strongest baseline trained under identical weak supervision.
+      </p>
+      
+      <img class="teaser" src="assets/teaser.png" alt="Boxes2Pixels qualitative overview" style="margin-top: 24px;">
+      <p class="caption">
+        From coarse bounding boxes to dense defect masks. SAM pseudo-masks provide weak supervision, but the final student is trained to correct systematic teacher errors.
       </p>
     </section>
 
